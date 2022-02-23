@@ -1,20 +1,17 @@
 import React from "react";
+import InputTel from "../inputTel/inputTel";
+import btnStyle from "./Button.module.css"
+import baseStyle from "./Base.module.css"
+import InputName from "../inputName/inputName.js"
 
 class Form extends React.Component {
-  satete = {};
+  state = {};
   render() {
     return (
-      <div>
-        <h2>Name</h2>
-        <input
-          type="text"
-          name="name"
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          required
-        />
-
-        <button type="submit">Add contact</button>
+      <div className={baseStyle.container}>
+       <InputName/>
+<InputTel />
+        <button type="submit" className={btnStyle.btn}>Add contact</button>
       </div>
     );
   }
